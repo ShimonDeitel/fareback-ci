@@ -1,0 +1,29 @@
+{
+  "identifier" : "fareback",
+  "nonRenewingSubscriptions" : [],
+  "products" : [
+    {
+      "displayPrice" : "2.99",
+      "familyShareable" : false,
+      "internalID" : "fareback_pro_unlock",
+      "localizations" : [
+        {
+          "description" : "Unlocks unlimited commute routes and full savings history",
+          "displayName" : "Fareback Pro",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "fareback_pro_unlock",
+      "referenceName" : "Fareback Pro Unlock",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_askToBuyEnabled" : false
+  },
+  "subscriptionGroups" : [],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}
