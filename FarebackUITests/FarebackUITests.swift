@@ -32,7 +32,11 @@ final class FarebackUITests: XCTestCase {
 
     func testHomeShowsOdometerOnLaunch() throws {
         let app = launchApp()
-        XCTAssertTrue(app.otherElements["odometerStrip"].waitForExistence(timeout: 12), "Odometer strip did not appear on launch")
+        // The combined accessibility element's exact XCUIElementType varies
+        // by iOS version (can surface as .other or .staticText), so match
+        // any element type by identifier rather than assuming one bucket.
+        let odometer = app.descendants(matching: .any).matching(identifier: "odometerStrip").firstMatch
+        XCTAssertTrue(odometer.waitForExistence(timeout: 12), "Odometer strip did not appear on launch")
     }
 
     func testSeedRoutesAppear() throws {
