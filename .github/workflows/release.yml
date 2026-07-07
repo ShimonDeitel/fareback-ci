@@ -14,7 +14,7 @@ jobs:
       TEAM_ID: W7Q885Q59C
       SIGN_IDENTITY_SHA1: 28783A84B07D8DFC5FCF311F7B4D7FB46594C728
       APP_ID: "6788174256"
-      IAP_ID: ""
+      IAP_ID: "6788250838"
     steps:
       - uses: actions/checkout@v4
       - uses: maxim-lobanov/setup-xcode@v1
