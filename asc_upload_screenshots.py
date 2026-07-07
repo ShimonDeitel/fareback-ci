@@ -63,15 +63,15 @@ def main():
     status, versions = req("GET", f"/apps/{APP_ID}/appStoreVersions?limit=5", token)
     editable = None
     for v in versions["data"]:
-        st = v["attributes"]["appStoreVersionState"]
+        st = v["attributes"]["appVersionState"]
         if st in ("PREPARE_FOR_SUBMISSION", "REJECTED", "DEVELOPER_REJECTED", "WAITING_FOR_REVIEW", "READY_FOR_SALE"):
             editable = v
             break
     if not editable:
-        print("No suitable app store version found; listing all:", [v["attributes"]["appStoreVersionState"] for v in versions["data"]])
+        print("No suitable app store version found; listing all:", [v["attributes"]["appVersionState"] for v in versions["data"]])
         sys.exit(1)
     version_id = editable["id"]
-    print(f"Using version {version_id} (state={editable['attributes']['appStoreVersionState']})")
+    print(f"Using version {version_id} (state={editable['attributes']['appVersionState']})")
 
     # 2. get localizations for this version
     status, locs = req("GET", f"/appStoreVersions/{version_id}/appStoreVersionLocalizations", token)
